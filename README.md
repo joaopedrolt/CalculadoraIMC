@@ -1,2 +1,2 @@
 # CalculadoraIMC
-Projeto Calculadore IMC como exercício de ReactJS. Curso B7Web.
+Projeto Calculadore IMC utilizando ReactJS. Inspirado no Curso B7Web.
