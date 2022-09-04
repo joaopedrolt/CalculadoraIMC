@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import '../App.css';
 
-function LeftSide() {
+type Imc = {
+  setImc: React.Dispatch<React.SetStateAction<number>>;
+}
+
+function LeftSide({ setImc }: Imc) {
 
   let [weigh, setW] = useState<number>();
   let [height, setH] = useState<number>();
@@ -33,6 +37,12 @@ function LeftSide() {
 
     let imc: number = w / (h ** 2);
     console.log(imc);
+
+    if (h > 0 || w > 0) {
+      setImc(imc);
+      console.log(imc);
+    }
+
   }
 
   const handleMouseOver = () => {
@@ -40,7 +50,7 @@ function LeftSide() {
     let h: number = (height == undefined) ? 0 : height;
     let w: number = (weigh == undefined) ? 0 : weigh;
 
-    if(h <= 0 || w <=0){
+    if (h <= 0 || w <= 0) {
       isOver(true);
     }
 
@@ -56,7 +66,8 @@ function LeftSide() {
       <p className='subtitle mt-20'>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.</p>
       <input className='input-number weigh mt-30' type="number" value={height} onChange={handleInputValidator} placeholder='Digite a sua altura Ex: 1.5 (em métros)' />
       <input className='input-number height mt-10' type="number" value={weigh} onChange={handleInputValidator} placeholder='Digite o seu peso Ex: 75kg (em kg)' />
-      <button className={'mt-50 button-calculate smooth-transition hover-scale' + ((buttonHover == true) ? " block-click" : "")} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={calculateImc}>Calcular</button>
+      <button className={'mt-50 button-calculate smooth-transition hover-scale' + ((buttonHover == true) ? " block-click" : "")} onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut} onClick={calculateImc}>{(buttonHover == true) ? "Insira os Dados Corretamente" : "Calcular"}</button>
     </div>
   );
 }

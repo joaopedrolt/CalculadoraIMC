@@ -37,6 +37,10 @@ p {
     margin-top: 5px;
 }
 
+.mt-8 {
+    margin-top: 8px;
+}
+
 .mt-10 {
     margin-top: 10px;
 }
@@ -87,6 +91,15 @@ p {
 
 .h-100 {
     height: 100%;
+}
+
+.fz-28 {
+    font-size: 28px;
+}
+
+.fz-20 {
+    font-size: 20px;
+    letter-spacing: 0.7px;
 }
 
 #imc {
@@ -157,8 +170,8 @@ p {
 }
 
 .thumbImg-result {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
 }
 
 .thumbImg {
@@ -170,8 +183,16 @@ p {
     transform: translate(0px, -1px);
 }
 
+.thumb-up-result {
+    transform: translate(0px, -5px);
+}
+
 .thumb-down {
     transform: translate(0px, 1px);
+}
+
+.thumb-down-result {
+    transform: translate(-3px, 4px);
 }
 
 .smooth-transition {
@@ -225,4 +246,28 @@ p {
     cursor: not-allowed;
     background-color: #909ea7;
     transform: scale(100%) !important;
+}
+
+.info {
+    transform: translateY(-18px);
+    margin-right: 72px;
+}
+
+.return-button {
+    padding: 25px;
+    background-color: #147598;
+    border-radius: 50%;
+    transform: translateX(-107px);
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.return-button:hover {
+    filter: brightness(1.1);
+}
+
+.left-arrow {
+    height: 22px;
+    width: 26px;
 }
