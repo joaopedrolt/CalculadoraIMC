@@ -1,0 +1,13 @@
+if (buttonHover == true) {
+      if (showResult == true) {
+        setBtext("Novo Cálculo");
+        console.log("retorna porra")
+      }
+      else if (showResult == false && (h <= 0 || w <= 0)) {
+        setBtext("Insira os Dados Corretamente");
+        console.log("Insere os dados krl")
+      }
+    } else {
+      setBtext("Calcular");
+      console.log("Calcula maldito")
+    }
