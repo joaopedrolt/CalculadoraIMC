@@ -15,8 +15,6 @@ function LegendResult({ imc }: Result) {
   let imgBColor: string = "";
   let result: number = imc;
   
-  console.log(imc);
-
   switch (true) {
     case imc >= 0 && imc <= 18.5:
       legendBColor = "legend-gray";

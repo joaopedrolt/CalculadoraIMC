@@ -2,12 +2,17 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    overflow-y: auto;
 }
 
 h1,
@@ -73,7 +78,7 @@ p {
     display: flex;
 }
 
-.inblock{
+.inblock {
     display: inline-block;
 }
 
@@ -97,7 +102,7 @@ p {
     height: 100%;
 }
 
-.w-95{
+.w-95 {
     width: 95%;
 }
 
@@ -110,12 +115,13 @@ p {
     letter-spacing: 0.7px;
 }
 
-.al-end{
+.al-end {
     align-items: end;
 }
 
 #imc {
-    padding-bottom: 5vh;
+    padding: 0 25px;
+    max-height: 100%;
 }
 
 .logo-div {
@@ -162,15 +168,15 @@ p {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
     -moz-appearance: textfield;
 }
 
-.measures{
+.measures {
     color: black;
     padding: 9px 0;
     margin-left: 8px;
@@ -292,6 +298,10 @@ input[type=number] {
     transition: all 0.3s ease-in-out;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .return-button:hover {
     filter: brightness(1.1);
 }
@@ -299,4 +309,64 @@ input[type=number] {
 .left-arrow {
     height: 22px;
     width: 26px;
+}
+
+@media (max-width: 1024px) {
+    .frame {
+        flex-direction: column !important;
+        gap: 35px;
+    }
+
+    .pr-25 {
+        padding: 0;
+    }
+
+    .pl-25 {
+        padding: 0;
+    }
+
+    .title {
+        text-align: center;
+        transform: none;
+    }
+
+    .rightside-size {
+        padding-bottom: 25px;
+    }
+
+    #imc {
+        padding-top: 25px;
+    }
+
+    .legend-result {
+        padding: 20px;
+        border-radius: 10px;
+        width: 230px;
+        height: 230px;
+    }
+
+    .thumbImg-result {
+        width: 25px;
+        height: 25px
+    }
+
+    .thumb-down-result {
+        transform: translate(0px, 1px);
+    }
+
+    .thumb-up-result {
+        transform: translate(0px, -1px);
+    }
+
+    .info {
+        transform: none;
+    }
+
+    .legend-thumb-result{
+        padding: 20px;
+    }
+
+    .logo{
+        justify-content: center;
+    }
 }

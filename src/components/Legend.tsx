@@ -4,11 +4,11 @@ import LegendBox from './LegendBox';
 function Legend() {
     return (
         <>
-            <div className='row gap-20 jc-center'>
+            <div className='row gap-20 jc-center flex-wrap'>
                 <LegendBox color="gray" />
                 <LegendBox color="green" />
             </div>
-            <div className='row gap-20 mt-20 jc-center'>
+            <div className='row gap-20 mt-20 jc-center flex-wrap'>
                 <LegendBox color="yellow" />
                 <LegendBox color="red" />
             </div>

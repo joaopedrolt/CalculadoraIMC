@@ -12,7 +12,7 @@ function App() {
  return(
    <>
     <Header />
-    <div className='row container-xl mt-30 '>
+    <div className='frame row container-xl mt-30 '>
       <LeftSide setImc={setImc} showResult={showResult} setShowResult={setShowResult}/>
       <RightSide imc={imc} showResult={showResult} />
     </div>

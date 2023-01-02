@@ -9,31 +9,71 @@ type Imc = {
 
 function LeftSide({ setImc, setShowResult, showResult }: Imc) {
 
-  let [weigh, setW] = useState<number>();
-  let [height, setH] = useState<number>();
-  let [buttonText, setBtext] = useState<string>("Calcular");
-  let [blockedClass, setBlocked] = useState(false);
-  let [m, setM] = useState<string>("");
-  let [kg, setKg] = useState<string>("");
+  const [weigh, setW] = useState<number>();
+  const [height, setH] = useState<number>();
+  const [buttonText, setBtext] = useState<string>("Calcular");
+  const [blockedClass, setBlocked] = useState(false);
+  const [calculated, setCalculated] = useState(false);
+  const [m, setM] = useState<string>("");
+  const [kg, setKg] = useState<string>("");
+
+  let backspaceClicked: boolean;
+
+  const handleKeyDown = (event: { keyCode: number; }) => {
+    if (event.keyCode === 8) {
+      backspaceClicked = true;
+    } else {
+      backspaceClicked = false;
+    }
+  }
 
   const handleInputValidator = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let inputValue = (event.target.value != "") ? parseFloat(event.target.value) : 0;
+
+    let inputValueString = event.target.value;
 
     if (event.target.classList.contains("height")) {
-      setM("M");
-      if (inputValue == 0) {
-        setH(undefined);
-        setM("");
-      } else {
-        (inputValue < 0) ? setH(0) : setH(inputValue);
+
+      if (inputValueString[1] != '.') {
+        let arrayString = [...inputValueString];
+        arrayString.splice(1, 0, '.');
+        inputValueString = arrayString.toString().replaceAll(',', '');
       }
+
+      let inputValueNumber = parseFloat(inputValueString);
+
+      if (inputValueString.length <= 4) {
+        setM("M");
+        if (inputValueNumber == 0 || Number.isNaN(inputValueNumber)) {
+          setH(undefined);
+          setM("");
+        } else {
+          (inputValueNumber < 0) ? setH(0) : setH(inputValueNumber);
+        }
+      }
+
     } else {
-      setKg("KG");
-      if (inputValue == 0) {
-        setKg("");
-        setW(undefined);
-      } else {
-        (inputValue < 0) ? setW(0) : setW(inputValue);
+
+      if (!backspaceClicked) {
+
+        if (inputValueString[2] != undefined && inputValueString[1] != '.' &&
+          inputValueString[2] != '.' && inputValueString[4] == undefined && inputValueString[5] == undefined) {
+          let arrayString = [...inputValueString];
+          arrayString.splice(3, 0, '.');
+          inputValueString = arrayString.toString().replaceAll(',', '');
+        }
+
+      }
+
+      let inputValueNumber = parseFloat(inputValueString)
+
+      if (inputValueString.length <= 6) {
+        setKg("KG");
+        if (inputValueNumber == 0 || Number.isNaN(inputValueNumber)) {
+          setKg("");
+          setW(undefined);
+        } else {
+          (inputValueNumber < 0) ? setW(0) : setW(inputValueNumber);
+        }
       }
     }
 
@@ -43,7 +83,7 @@ function LeftSide({ setImc, setShowResult, showResult }: Imc) {
     if (h > 0 || w > 0) {
       setBlocked(false);
       setBtext("Calcular");
-    } 
+    }
 
   }
 
@@ -53,22 +93,24 @@ function LeftSide({ setImc, setShowResult, showResult }: Imc) {
     let w: number = (weigh == undefined) ? 0 : weigh;
 
     let imc: number = w / (h ** 2);
-    console.log(imc);
 
-    if ((h > 0 && w > 0) && showResult == false) {
+    if ((h > 0 && w > 0 && w <= 300 && h <= 2.25) && showResult == false) {
       setImc(imc);
       setShowResult(true);
-      console.log(imc);
+      setCalculated(true);
       setBtext("Efetuar Novo Cálculo");
     }
 
     if (showResult == true) {
       setShowResult(false);
       setBtext("Calcular");
+      setCalculated(false);
       setBlocked(true);
       setBtext("Insira os Dados Corretamente");
-      setH(0);
-      setW(0);
+      setH(NaN);
+      setW(NaN);
+      setKg("");
+      setM("");
     }
   }
 
@@ -77,7 +119,7 @@ function LeftSide({ setImc, setShowResult, showResult }: Imc) {
     let h: number = (height == undefined) ? 0 : height;
     let w: number = (weigh == undefined) ? 0 : weigh;
 
-    if (showResult == false && (h <= 0 || w <= 0)) {
+    if (showResult == false && (h <= 0 || w <= 0 || w > 300 || h > 2.25)) {
       setBlocked(true);
       setBtext("Insira os Dados Corretamente");
     }
@@ -96,16 +138,28 @@ function LeftSide({ setImc, setShowResult, showResult }: Imc) {
 
   }
 
+  console.log(calculated)
+
   return (
     <div className='col-2 row column pr-25 jc-center'>
       <h1 className='title'>Calcule o seu IMC</h1>
       <p className='subtitle mt-20'>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.</p>
       <div className='row w-95'>
-        <input className='input-number height mt-30' type="number" value={height} onChange={handleInputValidator} placeholder='Digite a sua altura Ex: 1.5 (em métros)' />
+        {calculated
+          ?
+          <input className='input-number height mt-30' type="number" value={height} readOnly placeholder='Digite a sua altura em métros (Ex: 1.69m)' />
+          :
+          <input className='input-number height mt-30' type="number" value={height} onChange={handleInputValidator} placeholder='Digite a sua altura em métros (Ex: 1.69m)' />
+        }
         <span className='d-flex al-end measures'>{m}</span>
       </div>
       <div className='row w-95'>
-        <input className='input-number weigh mt-10' type="number"  value={weigh} onChange={handleInputValidator} placeholder='Digite o seu peso Ex: 75kg (em kg)' />
+        {calculated
+          ?
+          <input className='input-number weigh mt-10' type="number" max={300} value={weigh} readOnly placeholder='Digite o seu peso em quilogramas (Ex: 75.65kg)' />
+          :
+          <input className='input-number weigh mt-10' type="number" max={300} value={weigh} onKeyDown={handleKeyDown} onChange={handleInputValidator} placeholder='Digite o seu peso em quilogramas (Ex: 75.65kg)' />
+        }
         <span className='d-flex al-end measures'>{kg}</span>
       </div>
       <button className={'mt-50 button-calculate smooth-transition hover-scale' + ((blockedClass == true) ? " block-click" : "")} onMouseOver={handleMouseOver}
