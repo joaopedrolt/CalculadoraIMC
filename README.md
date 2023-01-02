@@ -3,7 +3,7 @@
 <h3 align="center">Informações</h3>
  
 - Nome do Projeto: Calculadora IMC ReactJS.
-- Autoria: Todo código de autoria própria, ideia e layout inspirados no curso b7web.
+- Autoria: Todo código de autoria própria. Ideia e layout inspirados no curso b7web.
 - Proposito: Prática de algumas tecnologias web front-end.
 - Progresso: Completo e responsivo.
 - Tecnologias utilizadas: ReactJS, Typescript e Vite.
@@ -12,7 +12,7 @@
 
 <h3 align="center">Utilização</h3>
 
-<h4 align="center"><a target="_blank" href="https://joaopedrolt.github.io/calculadora-imc-reactjs/">Você pode acessar esse projeto clicando aqui</a></h3>
+<h4 align="center"><a href="https://joaopedrolt.github.io/calculadora-imc-reactjs/">Você pode acessar esse projeto clicando aqui</a></h3>
 <h5 align="center">Obs: Possibilidade de haver delay ou indisponibilidade por conta do host</h5>
 
 - Informe suas medidas para que o cálculo seja efetuado.
