@@ -15,25 +15,15 @@
 <h4 align="center"><a target="_blank" href="https://joaopedrolt.github.io/calculadora-imc-reactjs/">Você pode acessar esse projeto clicando aqui</a></h3>
 <h5 align="center">Obs: Possibilidade de haver delay ou indisponibilidade por conta do host</h5>
 
-- Logue utilizando algum usuário previamente criado na tabela "users", sendo eles (login : senha): <br></br>
-  Gerente Logístico - admin : admin <br></br>
-  Gerente de Vendas - vendas : vendas <br></br>
-  Motorista - motorista : motorista 
+- Informe suas medidas para que o cálculo seja efetuado.
 
 <h3 align="center">Instalação Local</h3>
 
 - Clonar ou fazer download do projeto.
 - Comando "npm install" no diretório do projeto.
-- Configurar banco de dados de acordo com o modelo da sessão abaixo.
-- Configurar as variáveis de ambiente no arquivo .env seguindo o padrão.
-- Inserir pelo menos um usuário na tabela "users" tendo o valor da coluna "accesslevel" inserido como 1.
-- Comando "npm run start" no diretório do projeto.
+- Comando "npm run dev" no diretório do projeto.
 
 <h5 align="center">Obs: Caso a imagem não carregar clique no texto gerado para abri-la em uma guia do navegador ou recarregue a página do repositório</h5>
-
-<h3 align="center">Banco de Dados</h3>
-
-<div align="center"><img src="http://drive.google.com/uc?export=view&id=1U3c-F9IC2fY6GexTSfxalwHs7iPwZuRN" width=400 alt="Diagrama-Banco" /></div>
 
 <h3 align="center">Imagens do Software</h3>
 
