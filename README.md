@@ -31,4 +31,4 @@
 
 <div align="center"><img src="http://drive.google.com/uc?export=view&id=1vKYswxNEDDC3OhN2Ta1dhCa7fTaTaULt" width=600 alt="Imagem 2" /></div>
 
-<div align="center"><img src="http://drive.google.com/uc?export=view&id=1aVDr1jChNqlZUctZWjo_CcVPD14O02M_"  alt="Imagem 2" /></div>
+<div align="center"><img src="http://drive.google.com/uc?export=view&id=1aVDr1jChNqlZUctZWjo_CcVPD14O02M_" width=300 height=600  alt="Imagem 2" /></div>
