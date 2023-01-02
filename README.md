@@ -1,18 +1,18 @@
-<h2 align="center">CRUD de gerenciamento de pessoas e transporte simples</h2>
+<h2 align="center">Calculadora de Índice de massa corporal</h2>
 
 <h3 align="center">Informações</h3>
  
-- Nome do Projeto: Plato (Antigo).
-- Autoria: Própria.
-- Proposito: Projeto crud para disciplina de laboratório de engenharia de software (Fatec).
-- Progresso: Parcialmente completo, não responsivo para mobile.
-- Tecnologias utilizadas: HTML, CSS, JavaScript, NodeJS, Typescript, ExpressJS, MustacheJS, SQL Server e Sequelize.
-- Requisitos: NodeJS, TypeScript e Sql Server.
-- Adendos: Projeto super simples, sem intuito de ser profissional, feito apenas para prática dos recursos das tecnologias acima.
+- Nome do Projeto: Calculadora IMC ReactJS.
+- Autoria: Todo código de autoria própria, ideia e layout inspirados no curso b7web.
+- Proposito: Prática de algumas tecnologias web front-end.
+- Progresso: Completo e responsivo.
+- Tecnologias utilizadas: ReactJS, Typescript e Vite.
+- Requisitos: NodeJS e TypeScript.
+- Adendos: Nenhum.
 
 <h3 align="center">Utilização</h3>
 
-<h4 align="center"><a target="_blank" href="https://plato-nodejs-render.onrender.com">Você pode acessar esse projeto clicando aqui</a></h3>
+<h4 align="center"><a target="_blank" href="https://joaopedrolt.github.io/calculadora-imc-reactjs/">Você pode acessar esse projeto clicando aqui</a></h3>
 <h5 align="center">Obs: Possibilidade de haver delay ou indisponibilidade por conta do host</h5>
 
 - Logue utilizando algum usuário previamente criado na tabela "users", sendo eles (login : senha): <br></br>
