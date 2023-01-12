@@ -23,9 +23,9 @@
 - Comando "npm install" no diretório do projeto.
 - Comando "npm run dev" no diretório do projeto.
 
-<h5 align="center">Obs: Caso a imagem não carregar clique no texto gerado para abri-la em uma guia do navegador ou recarregue a página do repositório</h5>
-
 <h3 align="center">Imagens do Software</h3>
+
+<h5 align="center">Obs: Caso a imagem não carregar clique no texto gerado para abri-la em uma guia do navegador ou recarregue a página do repositório</h5>
 
 <div align="center"><img src="http://drive.google.com/uc?export=view&id=1QMtyANEN9VZiOag-So96T4enPsKe_IPV"  width=600 alt="Imagem 1" /></div>
 
